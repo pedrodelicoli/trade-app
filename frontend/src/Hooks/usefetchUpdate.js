@@ -15,6 +15,7 @@ const useFetchUpdate = () => {
       }
     };
     if (update !== null) fetchUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [update]);
 };
 

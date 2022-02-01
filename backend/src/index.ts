@@ -1,6 +1,6 @@
 import express from 'express';
 import { router } from './routes/router';
-const error = require('./middlewares/error');
+const { error } = require ('./middlewares/error');
 import socketio from 'socket.io';
 import WebSocket from 'ws';
 import http from 'http';

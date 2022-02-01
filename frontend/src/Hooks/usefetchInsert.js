@@ -15,6 +15,7 @@ const useFetchInsert = (user) => {
       }
     };
     if (add !== '') fetchUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [add]);
 };
 

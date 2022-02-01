@@ -3,17 +3,18 @@ import api from '../services/api';
 import Context from '../Context/Context';
 
 const useFetchEmail = () => {
-  const { login, userExist, setUser } = useContext(Context);
+  const { userExist, setUser, login } = useContext(Context);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        api.get(`/user/${login.emailLogin}`)
+        api.post('/login', {
+          email: login.emailLogin,
+          password: login.passwordLogin })
           .then((response) => response.data)
           .then((data) => setUser({
             name: data.name,
             email: data.email,
-            password: data.password,
             trades: data.trades,
           }));
       } catch (err) {
@@ -21,6 +22,7 @@ const useFetchEmail = () => {
       }
     };
     fetchUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userExist]);
 };
 

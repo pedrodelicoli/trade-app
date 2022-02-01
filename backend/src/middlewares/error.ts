@@ -1,6 +1,13 @@
-import { Response } from 'express';
+import {Response, Request, NextFunction} from 'express'
 
-module.exports = (err: any, res: Response ) => {
-	console.log(err.message);
-    res.status(500).end();
-}
+const error = (err: any, req: Request, res: Response, next: NextFunction) => {
+    if (err.erro) {
+      const { erro } = err;
+      return res.status(erro.status).json({
+        message: erro.message,      
+      });    
+    }  
+    res.status(500).json({ message: 'Internal Server Error' });
+  };
+  
+  export { error }; 
