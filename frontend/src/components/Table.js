@@ -36,6 +36,7 @@ const Table = () => {
         buttonName="Delete"
         handleClick={handleClick}
         className="trade-btn"
+        testId=''
       />
     </div>
   );

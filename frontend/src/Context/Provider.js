@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 import Context from './Context';
 
 function Provider(props) {
-  const [login, setLogin] = useState([]);
+  const [login, setLogin] = useState();
   const [user, setUser] = useState([]);
   const [add, setAdd] = useState('');
   const [gpbToUsd, setGpbToUsd] = useState([]);
   const [usdToGpb, setUsdToGpb] = useState([]);
-  const [userExist, setUserExist] = useState(false);
+  const [userExist, setUserExist] = useState(0);
   const [exists, setExists] = useState('');
   const [update, setUpdate] = useState(null);
   const [amount, setAmount] = useState(0);
+  const [userSign, setUserSign] = useState();
+  const [token, setToken] = useState();
 
   const { children } = props;
   const contextValue = {
@@ -33,6 +35,10 @@ function Provider(props) {
     setUpdate,
     amount,
     setAmount,
+    userSign, 
+    setUserSign,
+    token,
+    setToken
   };
 
   return (

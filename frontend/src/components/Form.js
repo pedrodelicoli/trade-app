@@ -80,7 +80,7 @@ const Form = () => {
           className="form-btn"
           testId="btn-form"
         />
-        { exists === 201 ? <span data-testid="signfail"> User already signUp </span> : null }
+        { exists === 400 ? <span data-testid="signfail"> User already Signed </span> : null }
         { exists === 200 ? <span data-testid="signsuccess"> Successfully Signed In! </span> : null }
         <p className="text-form">Trade with the Global Forex Trading Specialist</p>
       </form>

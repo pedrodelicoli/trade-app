@@ -3,14 +3,16 @@ import api from '../services/api';
 import Context from '../Context/Context';
 
 const useFetchEmail = () => {
-  const { userExist, setUser, login } = useContext(Context);
+  const { userExist, setUser, token } = useContext(Context);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        api.post('/login', {
-          email: login.emailLogin,
-          password: login.passwordLogin })
+        api.get('/user', {
+          headers: {
+            authorization: token
+          } 
+        })
           .then((response) => response.data)
           .then((data) => setUser({
             name: data.name,

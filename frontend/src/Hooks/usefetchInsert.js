@@ -9,7 +9,12 @@ const useFetchInsert = (user) => {
     const fetchUser = async () => {
       try {
         api.post('/user/', user)
-          .then((response) => setExists(response.status));
+          .then((response) => {
+            setExists(response.status)
+          })
+          .catch((err) => {
+            setExists(err.response.status)
+          });
       } catch (err) {
         console.log(err);
       }

@@ -1,30 +1,22 @@
-import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext } from 'react';
 import Context from '../Context/Context';
 import { Input, Button } from '.';
-import useFetchEmail from '../Hooks/usefetchEmail';
+import useFetchLogin from '../Hooks/usefetchLogin';
 
 const HeaderLogin = () => {
-  const navigate = useNavigate();
   const {
-    user, setLogin, login, userExist, setUserExist,
-  } = useContext(Context);
-  const [userSign, setUserSign] = useState(true);
-  useFetchEmail();
+    setLogin, login, userExist, setUserExist, userSign
+  } = useContext(Context);  
+  useFetchLogin();
   const handleClick = () => {
-    if (user.password && (user.password).toString() === (login.passwordLogin).toString()) {
-      setUserSign(true);
-      navigate('/trade');
-    }
-    setUserSign(false);
+    setUserExist(userExist + 1)  
   };
 
   const handleChange = ({ target: { id, value } }) => {
     setLogin({
       ...login,
       [id]: value,
-    });
-    userExist === false ? setUserExist(true) : setUserExist(false)
+    });  
   };
 
   return (

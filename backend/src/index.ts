@@ -5,8 +5,9 @@ import socketio from 'socket.io';
 import WebSocket from 'ws';
 import http from 'http';
 import cors from 'cors';
+require('dotenv').config();
 
-const PORT = 3001;
+const { PORT } = process.env;
 const app = express();
 
 const httpServer = http.createServer(app);
@@ -27,4 +28,6 @@ app.use(cors());
 app.use(router);
 app.use(error)
 
-httpServer.listen(PORT);
+httpServer.listen(PORT, () => {
+  console.log(`Running on PORT ${PORT}`)
+});

@@ -27,6 +27,7 @@ const Header = () => {
         disabled={false}
         handleClick={handleClick}
         className="logout-btn"
+        testId=''
       />
     </div>
   );

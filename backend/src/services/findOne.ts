@@ -1,16 +1,8 @@
 import { findByEmail } from "../models";
-import { errorHandler } from '../utils/errorhandler';
 
-interface Iuser {
-  email: string,
-  password: string,
-}
-
-const findOne = async (user: Iuser) => {
+const findOne = async (email: string) => {
   try {
-    const findUser = await findByEmail(user.email);
-    if (!findUser) throw errorHandler(404, 'usuário não encontrado');
-    if (findUser.password !== user.password) throw errorHandler(401, 'senha incorreta');
+    const findUser = await findByEmail(email);
     return {
       name: findUser.name,
       email: findUser.email,
