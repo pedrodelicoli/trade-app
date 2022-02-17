@@ -1,25 +1,66 @@
-Como rodar a aplicação?
+# Bem-vindos ao repositório do Trade App
 
-1 Clone o repositório
+## Contexto
 
-git clone git@github.com:pedrodelicoli/trade-app.git
+---
 
-2 Entre na pasta do repositório que você acabou de clonar:
+Esse projeto foi desenvolvido para meu portifólio.
 
-cd trade-app
+A proposta era desenvolver uma aplicação de trade de moedas, onde o usuário pode se cadastrar, fazer login e efetuar seus trades.
+O app conta com atualização em tempo real da cotação das moedas USD e GBP.
 
-3 Instale as dependências 
+---
 
-npm install
+## Como instalar
 
-4 Inicie o servidor http - O servidor estará disponível em http://localhost:3001
+Pre-requisitos para rodar o projeto: 
+- mongoDB
+- NPM
 
-cd backend 
+Copie o ssh do projeto `git@github.com:pedrodelicoli/trade-app.git`
 
-npm start
+* Abra um terminal no seu computador e utilize os comandos a baixo na ordem que são apresentados:
 
-5 Inicie o App 
+  * `git clone git@github.com:pedrodelicoli/trade-app.git`
+  * `cd trade-app`
+  * `npm install`
+  Acesse as pastas /frontend/ e /backend para rodar a aplicação e o servidor http respectivamente.
+  * `npm start`
 
-cd frontend
+  O backend está configurado para rodar na porta local 3001. Caso deseje utilizar outra porta utilize o arquivo `.env` para trocar para a porta desejada.
 
-npm start
+---
+
+### Tecnologias
+
+---
+
+Foi utilizado para o desenvolvimento desse projeto o NodeJS com Express para a criação básica, Mocha/Chai para a criação dos teste unitários e de integração. No frontend foram utilizados React com ContextAPI para gerenciamento de estado.
+
+---
+
+### Banco de dados
+
+O banco escolhido para a aplicação foi `Mongodb`, pela agilidade no desenvolvimento, facilidade de adição de novas informações sem necessitar re-estruturar toda a estrutura e pela robustes para lidar com grande volume de requisições.
+
+---
+
+## Próximos passos
+
+* Deploy no Heroku
+
+---
+
+## Contato
+
+<div style="display: flex; align-items: center; justify-content: space-between;">
+  <div>
+    <h2> Pedro Delicoli </h2>
+  <div style="display: flex;align-items: center;">
+    <img src="./frontend/my-app/images/linkedin-logo.png" alt="LinkedIn" style="width:20px;"/> https://github.com/pedrodelicoli
+  </div>
+  <br/>
+  Email: pedrodelicoli@hotmail.com  
+<br/>
+
+---
